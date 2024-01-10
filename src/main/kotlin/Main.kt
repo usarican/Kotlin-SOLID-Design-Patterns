@@ -1,6 +1,9 @@
-import solid.SingleReponsibilityPrincipleExample.*
+import SOLID.OpenClosePrincipleExample.*
+import SOLID.SingleReponsibilityPrincipleExample.*
 
 fun main() {
+    /*
+    --- SingleResponsibilityExample ---
     val userStore = UserStore()
     val userStoreCorrect = UserStoreCorrect()
     val userController = UserController(userStore)
@@ -22,5 +25,19 @@ fun main() {
     userControllerCorrect.createUser(invalidUserData2)
 
     println(userStore.userList)
-    println(userStoreCorrect.getUserList())
+    println(userStoreCorrect.getUserList())*/
+
+    /*
+    --- Open - Closed Principle Example ---
+    val shapeList = listOf(
+        Circle(5.0),Square(10.0),Square(5.0)
+    )
+    val shapeListCorrect = listOf<ShapeC>(
+        CircleCorrect(5.0),SquareCorrect(10.0),SquareCorrect(5.0),TriangleCorrect(10.0,5.0)
+    )
+    val areaCalculator = AreaCalculator(shapeList)
+    val areaCalculatorCorrect = AreaCalculatorCorrect(shapeListCorrect)
+    println(areaCalculator.sumOfArea())
+    println(areaCalculatorCorrect.sumOfArea())*/
+
 }

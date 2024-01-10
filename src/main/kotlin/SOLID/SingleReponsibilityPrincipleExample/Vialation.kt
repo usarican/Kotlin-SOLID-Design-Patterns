@@ -1,4 +1,4 @@
-package solid.SingleReponsibilityPrincipleExample
+package SOLID.SingleReponsibilityPrincipleExample
 
 class UserController(
     private val userStore : UserStore
