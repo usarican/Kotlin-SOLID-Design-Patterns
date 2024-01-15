@@ -4,6 +4,18 @@ import jdk.jshell.spi.ExecutionControl.NotImplementedException
 
 
 fun main() {
+    val userPersistenceService = UserPersistenceService()
+    val orderPersistenceService = OrderPersistenceService()
+
+    val order = Order(1)
+    val user = User("A",1)
+
+    userPersistenceService.save(user)
+    orderPersistenceService.save(order)
+
+    println(UserPersistenceService.mutableUserList)
+    println(OrderPersistenceService.mutableOrderList)
+
 
 }
 
