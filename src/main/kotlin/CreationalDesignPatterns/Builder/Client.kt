@@ -7,6 +7,9 @@ fun main(){
     Director.directorBuild(userDtoBuilder,user)?.print()
     Director.directorBuild(userWebDTOBuilder,user)?.print()
 
+    Workout.Builder().workoutName("Bench Press")
+        .build()
+        .print()
 
 }
 
