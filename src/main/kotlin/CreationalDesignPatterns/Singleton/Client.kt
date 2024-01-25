@@ -11,6 +11,9 @@ fun main(){
 
     // Kotlin way eager Singleton implementation.
     val eagerSingletonKotlin = object {
+        init {
+            println("eagerSingletonKotlin ")
+        }
         val name = "Utku"
         fun printName(){
             println(name)

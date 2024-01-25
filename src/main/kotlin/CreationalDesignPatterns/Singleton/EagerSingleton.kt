@@ -1,6 +1,10 @@
 package CreationalDesignPatterns.Singleton
 
-class EagerSingleton private constructor(){
+class EagerSingleton{
+
+    private constructor(){
+        println("EagerSingleton Created.")
+    }
 
     val name = "Eager Singleton"
     fun printName(){
