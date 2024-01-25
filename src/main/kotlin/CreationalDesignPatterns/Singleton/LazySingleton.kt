@@ -1,6 +1,8 @@
 package CreationalDesignPatterns.Singleton
 
 class LazySingleton private constructor() {
+
+    var instanceNum = 0
     companion object {
         @Volatile private var INSTANCE : LazySingleton? = null
         fun getInstance() : LazySingleton {

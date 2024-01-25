@@ -19,15 +19,20 @@ fun main(){
     eagerSingletonKotlin.printName()
 
     val lazySingleton = LazySingleton.getInstance()
+    lazySingleton.instanceNum = 10
     val lazySingleton2 = LazySingleton.getInstance()
+    println(lazySingleton2.instanceNum)
     println("Current Thread ${Thread.currentThread().name}")
     thread {
         val lazySingleton3 = LazySingleton.getInstance()
+        lazySingleton3.instanceNum = 50
         println("Current Thread ${Thread.currentThread().name}")
         println(lazySingleton3 == lazySingleton)
+        println(lazySingleton.instanceNum)
 
     }
     println(lazySingleton == lazySingleton2)
+    println(lazySingleton.instanceNum)
 
 
 }
