@@ -1,10 +1,19 @@
 package StructuralDesignPatterns.Adapter
 /* Client */
 fun main(){
+
+    // Class Adapter
     val employeeClassAdapter = EmployeeClassAdapter()
     populateEmployeeData(employeeClassAdapter)
     val businessCardDesigner = BusinessCardDesigner()
     println(businessCardDesigner.designCard(employeeClassAdapter))
+
+    // Object adapter
+    println("-----")
+    val adaptee = Employee()
+    populateEmployeeData(adaptee)
+    val employeeObjectAdapter = EmployeeObjectAdapter(adaptee)
+    println(businessCardDesigner.designCard(employeeObjectAdapter))
 }
 
 
