@@ -1,7 +1,5 @@
 package BehavioralDesignPatterns.ChainOfResponsibility
 
-import javax.management.relation.Role
-
 class ProjectLead(
     private val successor : LeaveApprover
 ) : Employee(PROJECT_LEAD,successor) {
