@@ -1,10 +1,10 @@
 package BehavioralDesignPatterns.Memento
 
 class RemoveStepCommand(
-    private val step : String
-) : AbstractWorkflowCommand() {
+    override val designer: WorkflowDesigner, private val step: String
+) : AbstractWorkflowCommand(designer = designer){
     override fun execute() {
-        this.memento = receiver.getMemento()
-        receiver.removeStep(step)
+        memento = designer.getMemento()
+        designer.removeStep(step)
     }
 }

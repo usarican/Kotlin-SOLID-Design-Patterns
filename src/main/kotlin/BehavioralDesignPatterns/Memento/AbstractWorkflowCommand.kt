@@ -1,14 +1,12 @@
 package BehavioralDesignPatterns.Memento
 
-abstract class AbstractWorkflowCommand() : WorkflowCommand {
-    protected lateinit var memento: WorkflowDesigner.Memento
-    protected lateinit var receiver : WorkflowDesigner
-
-    constructor(receiver : WorkflowDesigner) : this() {
-        this.receiver = receiver
-    }
+abstract class AbstractWorkflowCommand(
+    protected var memento: WorkflowDesigner.Memento = WorkflowDesigner.Memento(),
+    protected open val designer: WorkflowDesigner
+) : WorkflowCommand {
 
     override fun undo() {
-        receiver.setMemento(memento)
+        designer.setMemento(memento)
     }
+
 }

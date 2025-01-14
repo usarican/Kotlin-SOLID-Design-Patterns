@@ -1,12 +1,11 @@
 package BehavioralDesignPatterns.Memento
 
 class AddStepCommand(
-    private val designer: WorkflowDesigner,
-    private val step : String
-) : AbstractWorkflowCommand(designer) {
-
+    override val designer: WorkflowDesigner, private val step: String
+) : AbstractWorkflowCommand(designer = designer) {
     override fun execute() {
-        this.memento = receiver.getMemento()
-        receiver.addStep(step)
+        this.memento = designer.getMemento()
+        designer.addStep(step)
     }
+
 }

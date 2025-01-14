@@ -1,14 +1,11 @@
 package BehavioralDesignPatterns.Memento
 
+import java.util.LinkedList
+
 class Workflow(
     val name : String,
-    vararg step : String
+    val steps : LinkedList<String> = LinkedList()
 ) {
-    val steps = mutableListOf<String>()
-
-    init {
-        steps.addAll(step)
-    }
 
     fun addStep(step : String){
         steps.add(step)
@@ -17,4 +14,14 @@ class Workflow(
     fun removeStep(step : String){
         steps.remove(step)
     }
+
+    override fun toString(): String {
+        val builder : StringBuilder = StringBuilder("WorkFlow [name=")
+        builder.append(name).append("]\nBEGIN ->")
+        steps.forEach { step ->
+            builder.append(step).append(" -> ")
+        }
+        return builder.toString()
+    }
+
 }
