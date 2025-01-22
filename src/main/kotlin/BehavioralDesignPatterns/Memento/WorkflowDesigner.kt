@@ -19,7 +19,11 @@ class WorkflowDesigner {
     }
 
     fun getMemento(): Memento {
-        return workflow?.let { Memento(it.steps, it.name) } ?: run { Memento() }
+        return workflow?.let {
+            val memento = Memento(it.steps, it.name)
+            println("Update Memento ${memento.steps}")
+            memento
+        } ?: run { Memento() }
     }
 
     fun setMemento(memento: Memento) {
@@ -35,7 +39,7 @@ class WorkflowDesigner {
     }
 
     class Memento(
-        internal val steps: LinkedList<String>, internal val name: String
+        val steps: LinkedList<String>, val name: String
     ) {
 
         internal fun isEmpty() = steps.isEmpty() && name.isEmpty()

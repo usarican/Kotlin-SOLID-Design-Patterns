@@ -6,6 +6,7 @@ abstract class AbstractWorkflowCommand(
 ) : WorkflowCommand {
 
     override fun undo() {
+        println("Undo Memento ${memento.steps}")
         designer.setMemento(memento)
     }
 
